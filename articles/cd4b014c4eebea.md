@@ -37,6 +37,7 @@ https://aws.amazon.com/jp/elasticbeanstalk/pricing/
 ## Amazon EC2
 2025年12月31日までt4g.smallが月750時間使えるみたいです。
 この無料枠はしれっと毎年伸ばされているみたいです。多分来年も延ばされます。(希望的観測)
+t4g.smallのスペックはこんな感じです。
 
 | [**t4g.small**](https://aws.amazon.com/jp/ec2/instance-types/t4/) |  | 
 | ---- | ---- | 
