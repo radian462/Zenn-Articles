@@ -125,7 +125,7 @@ pipでaws cliとeb cliをインストールしてみましょう。
 pip install awscli awsebcli -U
 ```
 
-アクセスキーを使ってログインした後、`eb init`してリージョンを選ぶように言われたら正しく設定されています。
+アクセスキーを使ってログインした後、`eb init`してリージョンを選ぶように言われたら正しく設定されています。ターミナルを閉じてください。
 この記事では解説しませんが、CLIで作成するならこのまま続けても構いません。
 
 ```bash
@@ -166,3 +166,21 @@ Select a default region
 26) me-central-1 : Middle East (UAE)
 (default is 3): 
 ```
+
+## VPCでIPv6を設定する
+次にVPCでIPv6を使えるようにします。なぜこのようなことをするかというとIPv4アドレスはElastic IPでもパブリックIPでも課金されてしまうからです。
+30日使う計算だと、`$0.005/時間 * 720時間 = $3.6`と割と馬鹿にならない料金がかかります。ですがIPv6を使えばこの料金はかかりません。
+
+https://aws.amazon.com/jp/blogs/news/new-aws-public-ipv4-address-charge-public-ip-insights/
+
+今回はこの記事を参考にしました。
+
+https://qiita.com/Hide-Zaemon/items/f317e222bf671e2e0752
+
+まず、使用するVPCを選択して`アクション＞CIDRの編集`をクリックします。
+
+![](/images/cd4b014c4eebea/vpc_1.png)
+
+次に、`新しい IPv6 CIDR を追加`をクリックして、`IPv6 CIDR ブロック`を`Amazon 提供の IPv6 CIDR ブロック`に選択してください。
+
+![](/images/cd4b014c4eebea/vpc_2.png)
